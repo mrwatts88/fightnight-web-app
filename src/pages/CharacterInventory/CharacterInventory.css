@@ -1,0 +1,15 @@
+.page {
+    display: flex;
+    padding: 100px;
+}
+
+.leftPane {
+    width: 250px;
+    background-color: blue;
+    height: 100%;
+}
+
+.rightPane {
+    flex: 1;
+    background-color: red;
+}

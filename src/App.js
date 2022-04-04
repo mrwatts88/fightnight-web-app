@@ -3,6 +3,8 @@ import Web3 from "web3";
 import Web3Modal from "web3modal";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 import { useState } from 'react';
+import Landing from './pages/Landing/Landing';
+// import CharacterInventory from './pages/CharacterInventory/CharacterInventory';
 
 async function setup() {
   const providerOptions = {
@@ -47,26 +49,8 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img
-          src="https://i.pinimg.com/originals/8d/6f/f3/8d6ff31f94e244db66e9e96bb87dfa70.gif"
-          alt="logo" />
-        <p>
-          Welcome to Fight Night.
-        </p>
-        {!config.account ?
-          <button onClick={connect}>Connect Wallet</button> :
-          <>
-            <p/>
-            <small>
-              Wallet Address: {config.account}
-            </small>
-            <small>
-              Balance: {config.balance} MATIC
-            </small>
-          </>
-        }
-      </header>
+      <Landing config={config} connect={connect} />
+      {/* <CharacterInventory /> */}
     </div>
   );
 }
