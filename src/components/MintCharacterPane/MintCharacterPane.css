@@ -1,0 +1,15 @@
+.mintContainer { 
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 15px;
+    padding: 15px;
+
+    grid-template-areas: "header";
+    
+}
+
+.mintItem {
+    height: calc((100vh - 350px)/5);
+}

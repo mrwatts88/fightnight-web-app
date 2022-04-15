@@ -13,6 +13,7 @@
     "@walletconnect/web3-provider": "^1.7.7",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-native-web": "^0.17.7",
     "react-scripts": "4.0.3",
     "web-vitals": "^2.1.4",
     "web3modal": "^1.9.5"

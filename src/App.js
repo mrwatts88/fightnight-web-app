@@ -1,10 +1,11 @@
-import './App.css';
+import "./App.css";
 import Web3 from "web3";
 import Web3Modal from "web3modal";
 import WalletConnectProvider from "@walletconnect/web3-provider";
-import { useState } from 'react';
-import Landing from './pages/Landing/Landing';
-// import CharacterInventory from './pages/CharacterInventory/CharacterInventory';
+import { useState } from "react";
+import Landing from "./pages/Landing/Landing";
+import CharacterInventory from "./pages/CharacterInventory/CharacterInventory";
+import FightLogic from "./pages/FightLogic/FightLogic";
 
 async function setup() {
   const providerOptions = {
@@ -12,15 +13,15 @@ async function setup() {
       package: WalletConnectProvider, // required
       options: {
         rpc: {
-          80001: "https://rpc-mumbai.matic.today"
-        }
-      }
-    }
+          80001: "https://rpc-mumbai.matic.today",
+        },
+      },
+    },
   };
 
   const web3Modal = new Web3Modal({
     network: "mumbai",
-    providerOptions
+    providerOptions,
   });
 
   const provider = await web3Modal.connect();
@@ -45,12 +46,12 @@ function App() {
   const connect = async () => {
     const config = await setup();
     setConfig(config);
-  }
+  };
 
   return (
     <div className="App">
       <Landing config={config} connect={connect} />
-      {/* <CharacterInventory /> */}
+      {<CharacterInventory />},{<FightLogic />},
     </div>
   );
 }

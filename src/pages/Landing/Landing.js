@@ -1,28 +1,26 @@
-import React from 'react'
+import React from "react";
+import "./Landing.css";
 
 const Landing = ({ config, connect }) => {
   return (
-    <header className="App-header">
-        <img
-            src="https://i.pinimg.com/originals/8d/6f/f3/8d6ff31f94e244db66e9e96bb87dfa70.gif"
-            alt="logo" />
-        <p>
-            Welcome to Fight Night.
-        </p>
-        {!config.account ?
-            <button onClick={connect}>Connect Wallet</button> :
+    <header
+      className="App-header"
+      style={{
+        backgroundImage: `url("https://wallpaperaccess.com/full/1559442.jpg")`,
+      }}
+    >
+      <h3 className="itemd">Welcome to Fight Night.</h3>
+      {!config.account ? (
+        <button onClick={connect}>Connect Wallet</button>
+      ) : (
         <>
-            <p/>
-            <small>
-            Wallet Address: {config.account}
-            </small>
-            <small>
-            Balance: {config.balance} MATIC
-            </small>
+          <p />
+          <small>Wallet Address: {config.account}</small>
+          <small>Balance: {config.balance} MATIC</small>
         </>
-        }
+      )}
     </header>
-  )
-}
+  );
+};
 
-export default Landing
+export default Landing;
