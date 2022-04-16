@@ -5,15 +5,12 @@
     background-color: rgb(154, 156, 155);
     padding: 100px;
     grid-gap: 20px;
-
     grid-template-areas: 
     "header header"
     "sidebar content"
-
 }
 
-
-.fightLogicHeader{
+.fightLogicHeader {
     grid-area: header;
     height: 110px;
     width: 1fr;
@@ -25,8 +22,25 @@
     justify-content: center
 }
 
+.healthbar{
+    width: 70px;
+    background-color: rgba(230, 44, 20, 0.904);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
 
-.leftFighter {
+.health{
+    background-color: rgba(0, 238, 59, 0.904);
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    font-size: 40px;
+    }
+
+.fighter {
+    display:flex;
+    justify-content: space-between;
     text-align: justify;
     padding: 50px;
     flex: 1;
@@ -34,14 +48,4 @@
     background-color: rgba(201, 138, 78, 0.904);
     height: 700px;
     font-stretch: expanded;
-    
- 
-}
-
-.rightFighter {
-    padding: 50px;
-    flex: 1;
-    border: 3px solid #333;
-    background-color: rgba(201, 138, 78, 0.904);
-    
 }
