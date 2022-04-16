@@ -20,18 +20,26 @@
     background-color: rgba(201, 138, 78, 0.904);
     border: 3px solid #333;
     font-size: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center
 }
 
 
 .leftFighter {
+    text-align: justify;
+    padding: 50px;
     flex: 1;
     border: 3px solid #333;
     background-color: rgba(201, 138, 78, 0.904);
     height: 700px;
+    font-stretch: expanded;
+    
  
 }
 
 .rightFighter {
+    padding: 50px;
     flex: 1;
     border: 3px solid #333;
     background-color: rgba(201, 138, 78, 0.904);
