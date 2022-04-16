@@ -1,7 +1,7 @@
 import React from "react";
 
 const Hits = ({ turnNumber, turn, side }) => {
-  if (side == turn.attacker.side) {
+  if (side === turn.attacker.side) {
     const { maxHit, baseHit, finalDamage } = turn.attacker;
 
     return (

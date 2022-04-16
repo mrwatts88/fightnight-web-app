@@ -6,6 +6,7 @@ import { useState } from "react";
 import Landing from "./pages/Landing/Landing";
 import CharacterInventory from "./pages/CharacterInventory/CharacterInventory";
 import FightLogic from "./pages/FightLogic/FightLogic";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 async function setup() {
   const providerOptions = {
@@ -49,10 +50,15 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Landing config={config} connect={connect} />
-      {<CharacterInventory />},{<FightLogic />},
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/character-inventory" element={<CharacterInventory />} />
+          <Route path="/fight-logic" element={<FightLogic />} />
+          <Route path="/" element={<Landing config={config} connect={connect} />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

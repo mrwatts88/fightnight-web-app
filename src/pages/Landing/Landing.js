@@ -1,5 +1,6 @@
 import React from "react";
 import "./Landing.css";
+import { Link } from "react-router-dom";
 
 const Landing = ({ config, connect }) => {
   return (
@@ -9,16 +10,19 @@ const Landing = ({ config, connect }) => {
         backgroundImage: `url("https://wallpaperaccess.com/full/1559442.jpg")`,
       }}
     >
-      <h3 className="itemd">Welcome to Fight Night.</h3>
-      {!config.account ? (
-        <button onClick={connect}>Connect Wallet</button>
-      ) : (
-        <>
-          <p />
-          <small>Wallet Address: {config.account}</small>
-          <small>Balance: {config.balance} MATIC</small>
-        </>
-      )}
+      <div className="inner">
+        <h3 className="itemd">Welcome to Fight Night.</h3>
+        <div className="navButton">
+          <Link to="/character-inventory">Inventory</Link>&nbsp;&nbsp;&nbsp;<Link to="/fight-logic">Arena</Link>
+        </div>
+        {!config.account ? (
+          <button onClick={connect}>Connect Wallet</button>
+        ) : (
+          <>
+            <small className="walletInfo">Wallet Address: {config.account}</small>
+          </>
+        )}
+      </div>
     </header>
   );
 };

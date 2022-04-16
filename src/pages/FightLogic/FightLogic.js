@@ -1,4 +1,7 @@
-import React, { useEffect, useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import ReactAudioPlayer from "react-audio-player";
 import "./FightLogic.css";
 import Hits from "../../components/Hits";
 
@@ -11,6 +14,7 @@ function randomInt(max) {
 }
 
 const FightLogic = () => {
+  const audioEl = useRef();
   const [leftFighter, setLeftFighter] = useState({
     side: "left",
     isAttacking: Math.random() < 0.5,
@@ -36,11 +40,19 @@ const FightLogic = () => {
   const [isFighting, setIsFighting] = useState(false);
   const [turns, setTurns] = useState([]);
 
+  const history = useNavigate();
+
+  const goBack = () => {
+    history("/");
+  };
+
   useEffect(() => {
     if (isFighting && leftFighter.hitpoints > 0 && rightFighter.hitpoints > 0) {
       doTurn();
     } else {
       setIsFighting(false);
+      const player = audioEl.current.audioEl.current;
+      player.pause();
     }
   }, [turns, isFighting]);
 
@@ -48,7 +60,7 @@ const FightLogic = () => {
     await timeout(1000);
     const currentAttacker = leftFighter.isAttacking ? leftFighter : rightFighter;
     const { attack, weaponBoost, attackPotion } = currentAttacker;
-    const currentDefender = currentAttacker == leftFighter ? rightFighter : leftFighter;
+    const currentDefender = currentAttacker === leftFighter ? rightFighter : leftFighter;
     const { hitpoints, defence, armour, shieldPotion } = currentDefender;
     const defenceEvent = armour + shieldPotion + defence;
     const defenceRoll = randomInt(99);
@@ -62,7 +74,7 @@ const FightLogic = () => {
       ...old,
       {
         attacker: {
-          side: currentAttacker == leftFighter ? "left" : "right",
+          side: currentAttacker === leftFighter ? "left" : "right",
           maxHit,
           baseHit,
           finalDamage,
@@ -76,7 +88,7 @@ const FightLogic = () => {
       },
     ]);
 
-    if (currentDefender == leftFighter) {
+    if (currentDefender === leftFighter) {
       setLeftFighter({ ...leftFighter, hitpoints: newHp, isAttacking: true });
     } else {
       setRightFighter({ ...rightFighter, hitpoints: newHp });
@@ -85,6 +97,8 @@ const FightLogic = () => {
   }
 
   const start = () => {
+    const player = audioEl.current.audioEl.current;
+    player.play();
     setIsFighting(true);
   };
 
@@ -95,6 +109,19 @@ const FightLogic = () => {
         backgroundImage: `url("https://wallpaperaccess.com/full/4063249.jpg")`,
       }}
     >
+      <div
+        style={{
+          position: "fixed",
+          top: -5,
+          left: 15,
+          fontSize: 48,
+          cursor: "pointer",
+        }}
+        onClick={goBack}
+      >
+        «
+      </div>
+      <ReactAudioPlayer volume={0.008} ref={audioEl} src="bensound-epic.mp3" />
       <div className="fightLogicHeader">
         <div>
           FightLogic<button onClick={start}>START FIGHT!</button>

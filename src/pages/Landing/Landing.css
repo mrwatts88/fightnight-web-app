@@ -1,4 +1,35 @@
 .itemd {
-    background-color: rgba(0, 0, 0, 0.842);
     height: 50px;
+    color: #960822;
+    font-size: 50px;
+    }
+    
+    .walletInfo {
+        color: black;
+    }
+    
+    .navButton {
+        display: flex;
+        height: 50px;
+    }
+    
+    .navButton a {
+        display: flex;
+        text-decoration: none;
+        color: #960822;
+        font-weight: bold;
+    }
+    
+    .navButton a:hover {
+        color: black;
+    }
+    
+    .inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        position: relative;
+        right: -208px;
+        margin-top: 100px;
 }
