@@ -4,16 +4,14 @@ import "./CharacterGrid.css";
 import { walletContext } from "../../context/WalletContext";
 
 export const CharacterType = { KNIGHT: "KNIGHT", MAGE: "MAGE", ELF: "ELF", DWARF: "DWARF" };
+export const CharacterIds = { KNIGHT: 0, MAGE: 1, ELF: 2, DWARF: 3 };
 
 function CharacterGrid() {
   const context = useContext(walletContext);
 
-  if (!context.walletData) return null;
-
-  console.log(context.walletData.characterBalances);
+  if (!context?.walletData?.characterBalances) return null;
 
   const [numKnights, numMages, numElfs, numDwarfs] = context.walletData.characterBalances;
-  console.log([numKnights, numMages, numElfs, numDwarfs]);
   const uriFormat = context.walletData.uri;
 
   const knightUrl = uriFormat.replace("{id}", "0".padStart(64, "0"));
@@ -38,18 +36,9 @@ function CharacterGrid() {
 
   return (
     <div className="container">
-      {knights.map((character) => {
-        return <CharacterGridItem character={character} />;
-      })}
-      {mages.map((character) => {
-        return <CharacterGridItem character={character} />;
-      })}{" "}
-      {elf.map((character) => {
-        return <CharacterGridItem character={character} />;
-      })}
-      {dwarf.map((character) => {
-        return <CharacterGridItem character={character} />;
-      })}
+      {[...knights, ...mages, ...elf, ...dwarf].map((character, idx) => (
+        <CharacterGridItem character={character} key={idx} />
+      ))}
     </div>
   );
 }

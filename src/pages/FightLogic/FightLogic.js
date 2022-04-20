@@ -143,7 +143,7 @@ const FightLogic = () => {
       <div className="fighter">
         <div>
           {turns.map((t, index) => (
-            <Hits side={"right"} turnNumber={index + 1} turn={t} />
+            <Hits side={"right"} key={index} turnNumber={index + 1} turn={t} />
           ))}{" "}
         </div>
         <div className="healthbar">

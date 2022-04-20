@@ -49,6 +49,7 @@ const Landing = () => {
         balance: web3.utils.fromWei(balance),
         characterBalances,
         uri,
+        contract,
       });
       return {
         account: accounts[0],
