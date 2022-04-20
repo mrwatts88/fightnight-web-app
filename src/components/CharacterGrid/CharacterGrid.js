@@ -1,18 +1,41 @@
-import React from "react";
+import React, { useContext } from "react";
 import CharacterGridItem from "../CharacterGridItem/CharacterGridItem";
 import "./CharacterGrid.css";
+import { walletContext } from "../../context/WalletContext";
 
-const imageUrl = "https://thumbs.dreamstime.com/b/fairytale-mage-d-digital-render-fairy-tale-isolated-white-background-46714348.jpg";
-const mageUrl = "https://i.pinimg.com/originals/8d/6f/f3/8d6ff31f94e244db66e9e96bb87dfa70.gif";
-const dwarfUrl = "https://i.pinimg.com/736x/90/61/60/906160ae6ade93cf98ffe31e3ba743e1.jpg";
-const elfUrl = "https://cdna.artstation.com/p/assets/images/images/022/634/826/large/daniel-spagnol-elf-small.jpg?1576149892";
-
-const knights = [{ imageUrl }, "", ""];
-const mages = [{ mageUrl }, { mageUrl }, { mageUrl }];
-const dwarf = [{ dwarfUrl }, { dwarfUrl }, { dwarfUrl }];
-const elf = [{ elfUrl }, { elfUrl }, ""];
+export const CharacterType = { KNIGHT: "KNIGHT", MAGE: "MAGE", ELF: "ELF", DWARF: "DWARF" };
 
 function CharacterGrid() {
+  const context = useContext(walletContext);
+
+  if (!context.walletData) return null;
+
+  console.log(context.walletData.characterBalances);
+
+  const [numKnights, numMages, numElfs, numDwarfs] = context.walletData.characterBalances;
+  console.log([numKnights, numMages, numElfs, numDwarfs]);
+  const uriFormat = context.walletData.uri;
+
+  const knightUrl = uriFormat.replace("{id}", "0".padStart(64, "0"));
+  const mageUrl = uriFormat.replace("{id}", "1".padStart(64, "0"));
+  const elfUrl = uriFormat.replace("{id}", "2".padStart(64, "0"));
+  const dwarfUrl = uriFormat.replace("{id}", "3".padStart(64, "0"));
+
+  const knights = populateClass(numKnights, knightUrl, CharacterType.KNIGHT);
+  const mages = populateClass(numMages, mageUrl, CharacterType.MAGE);
+  const elf = populateClass(numElfs, elfUrl, CharacterType.ELF);
+  const dwarf = populateClass(numDwarfs, dwarfUrl, CharacterType.DWARF);
+
+  function populateClass(num, url, type) {
+    const arr = ["", "", ""];
+    for (let i = 0; i < 3; i++) {
+      if (num >= i + 1) {
+        arr[i] = { url, type };
+      }
+    }
+    return arr;
+  }
+
   return (
     <div className="container">
       {knights.map((character) => {
