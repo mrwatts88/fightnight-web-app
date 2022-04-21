@@ -50,7 +50,7 @@ const FightLogic = () => {
   const getFightResults = async () => {
     const player = audioEl.current.audioEl.current;
     player.play();
-    const result = await fetch("http://localhost:3001/fight-results");
+    const result = await fetch("https://fightnightserver.onrender.com/fight-results");
     const json = await result.json();
     setFinalResults(json.turns);
     setIsFighting(true);

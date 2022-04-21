@@ -1,9 +1,10 @@
 ### FightNight
 
+x[] deploy backend
 [x] put world map in game
 [] make cities clickable
 [] make city maps
-x[] Move fight logic to server
+[x] Move fight logic to server
 x[] Integrate swing speed
 [] Loot contract
 [] Staking contract
@@ -13,3 +14,4 @@ x[] Integrate swing speed
 [] Heal
 [] Go to fight caves
 [] Select oppenent / fight
+[] mobile view
