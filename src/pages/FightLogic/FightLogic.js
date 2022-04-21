@@ -9,45 +9,36 @@ function timeout(delay) {
   return new Promise((res) => setTimeout(res, delay));
 }
 
-function randomInt(max) {
-  return Math.floor(Math.random() * (max + 1));
-}
-
 const FightLogic = () => {
-  const audioEl = useRef();
-  const [leftFighter, setLeftFighter] = useState({
-    side: "left",
-    isAttacking: Math.random() < 0.5,
-    hitpoints: 100,
-    attack: 10,
-    defence: 10,
-    armour: 15,
-    weaponBoost: 10,
-    attackPotion: 5,
-    shieldPotion: 7,
-  });
-  const [rightFighter, setRightFighter] = useState({
-    side: "right",
-    hitpoints: 100,
-    attack: 10,
-    defence: 10,
-    armour: 15,
-    weaponBoost: 10,
-    attackPotion: 5,
-    shieldPotion: 7,
-  });
-
-  const [isFighting, setIsFighting] = useState(false);
+  const [finalResults, setFinalResults] = useState([]);
   const [turns, setTurns] = useState([]);
 
+  const audioEl = useRef();
+
+  const [isFighting, setIsFighting] = useState(false);
+
   const history = useNavigate();
+  const rightHitpoints = (turns) => {
+    return turns.length == 0
+      ? 100
+      : turns[turns.length - 1].attacker.side == "left"
+      ? turns[turns.length - 1].defender.hitpoints
+      : turns[turns.length - 1].attacker.hitpoints;
+  };
+  const leftHitpoints = (turns) => {
+    return turns.length == 0
+      ? 100
+      : turns[turns.length - 1].attacker.side == "left"
+      ? turns[turns.length - 1].attacker.hitpoints
+      : turns[turns.length - 1].defender.hitpoints;
+  };
 
   const goBack = () => {
     history("/");
   };
 
   useEffect(() => {
-    if (isFighting && leftFighter.hitpoints > 0 && rightFighter.hitpoints > 0) {
+    if (isFighting && turns.length < finalResults.length) {
       doTurn();
     } else {
       setIsFighting(false);
@@ -56,51 +47,20 @@ const FightLogic = () => {
     }
   }, [turns, isFighting]);
 
-  async function doTurn() {
-    await timeout(1000);
-    const currentAttacker = leftFighter.isAttacking ? leftFighter : rightFighter;
-    const { attack, weaponBoost, attackPotion } = currentAttacker;
-    const currentDefender = currentAttacker === leftFighter ? rightFighter : leftFighter;
-    const { hitpoints, defence, armour, shieldPotion } = currentDefender;
-    const defenceEvent = armour + shieldPotion + defence;
-    const defenceRoll = randomInt(99);
-    const didBlock = defenceRoll < Math.min(defenceEvent, 90);
-    const maxHit = attack + attackPotion + weaponBoost;
-    const baseHit = randomInt(maxHit);
-    const finalDamage = Math.floor(!didBlock ? baseHit : baseHit * (1 - defence / 100));
-    const newHp = Math.max(hitpoints - finalDamage, 0);
-
-    setTurns((old) => [
-      ...old,
-      {
-        attacker: {
-          side: currentAttacker === leftFighter ? "left" : "right",
-          maxHit,
-          baseHit,
-          finalDamage,
-        },
-        defender: {
-          defence,
-          hitpoints: newHp,
-          defenceRoll,
-          didBlock,
-        },
-      },
-    ]);
-
-    if (currentDefender === leftFighter) {
-      setLeftFighter({ ...leftFighter, hitpoints: newHp, isAttacking: true });
-    } else {
-      setRightFighter({ ...rightFighter, hitpoints: newHp });
-      setLeftFighter({ ...leftFighter, isAttacking: false });
-    }
-  }
-
-  const start = () => {
+  const getFightResults = async () => {
     const player = audioEl.current.audioEl.current;
     player.play();
+    const result = await fetch("http://localhost:3001/fight-results");
+    const json = await result.json();
+    setFinalResults(json.turns);
     setIsFighting(true);
   };
+
+  async function doTurn() {
+    await timeout(1000);
+
+    setTurns(finalResults.slice(0, turns.length + 1));
+  }
 
   return (
     <div
@@ -124,18 +84,18 @@ const FightLogic = () => {
       <ReactAudioPlayer volume={0.008} ref={audioEl} src="bensound-epic.mp3" />
       <div className="fightLogicHeader">
         <div>
-          FightLogic<button onClick={start}>START FIGHT!</button>
+          FightLogic<button onClick={getFightResults}>START FIGHT!</button>
         </div>
       </div>
       <div className="fighter">
         <div>
           {turns.map((t, index) => (
-            <Hits side={"left"} turnNumber={index + 1} turn={t} />
+            <Hits side={"left"} key={index} turnNumber={index + 1} turn={t} />
           ))}
         </div>
         <div className="healthbar">
-          <div className="health" style={{ height: `${leftFighter.hitpoints}%` }}>
-            {leftFighter.hitpoints}
+          <div className="health" style={{ height: `${leftHitpoints(turns)}%` }}>
+            {leftHitpoints(turns)}
           </div>
         </div>
       </div>
@@ -147,9 +107,9 @@ const FightLogic = () => {
           ))}{" "}
         </div>
         <div className="healthbar">
-          <div className="health" style={{ height: `${rightFighter.hitpoints}%` }}>
+          <div className="health" style={{ height: `${rightHitpoints(turns)}%` }}>
             {" "}
-            {rightFighter.hitpoints}{" "}
+            {rightHitpoints(turns)}{" "}
           </div>
         </div>
       </div>
