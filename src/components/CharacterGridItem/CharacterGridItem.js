@@ -8,6 +8,7 @@ function CharacterGridItem({ character }) {
   const [isShown, setIsShown] = useState(false);
 
   const [metaData, setMetaData] = useState({});
+  console.log(metaData);
 
   useEffect(() => {
     if (!character.url) return;

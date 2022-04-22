@@ -36,7 +36,7 @@ const Landing = () => {
     if (accounts.length > 0) {
       const balance = await web3.eth.getBalance(accounts[0]);
 
-      let contract = new web3.eth.Contract(ABI, "0x2248C61748dD0c47700688275A04F749C0f22af3");
+      let contract = new web3.eth.Contract(ABI, "0xffA94194503E8A768473BcD8e18e77CCE3159E89");
 
       const characterBalances = await contract.methods
         .balanceOfBatch([accounts[0], accounts[0], accounts[0], accounts[0]], [0, 1, 2, 3])
