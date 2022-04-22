@@ -1,14 +1,60 @@
 .mapAphenos {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-background-image: url("parchment.jpg");
-background-repeat: no-repeat; /* Do not repeat the image */
-background-size: cover; /* Resize the background image to cover the entire container */
-height: 100%;
-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("parchment.jpg");
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
+  background-size: cover;
+  /* Resize the background image to cover the entire container */
+  height: 100%;
 }
 
-.aphenos{
-height: 100%;
-  }
+.aphenos {
+  height: 781px;
+}
+
+.aphenosImgWrapper {
+  position: relative;
+}
+
+.meWrapper {
+  position: absolute;
+  top: 335px;
+  left: 615px;
+}
+
+.me {
+  height: 55px;
+}
+
+.statPreview div {
+  align-self: center;
+}
+
+.statPreview {
+  display: flex;
+  justify-content: space-between;
+  padding: 7px 15px;
+  border-radius: 10px;
+  visibility: hidden;
+  border: 3px solid gold;
+  background: white;
+}
+
+.statPreviewInner {
+  height: 15px;
+  margin-right: 10px;
+}
+
+.statPreviewInner:last-child {
+  margin-right: 0;
+}
+
+.graph {
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+}
