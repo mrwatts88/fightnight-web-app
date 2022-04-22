@@ -1,6 +1,6 @@
 ### FightNight
 
-x[] Check stat details
+x[] Check stat details / Check character equipment
 x[] Integrate character stats into fights
 x[] Make a click target config system
 x[] Integrate swing speed
@@ -8,7 +8,7 @@ x[] Make city maps
 [] Loot contract
 [] Staking contract
 [] Check health
-[] Check inventory/ Check character equipment
+[] Check inventory/
 [] Select opponent and fight
 [] Get herbs and heal
 [] mobile view

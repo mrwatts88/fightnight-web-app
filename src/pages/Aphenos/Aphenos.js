@@ -1,13 +1,17 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import StatsModal from "../../components/StatsModal/StatsModal";
 import "./Aphenos.css";
 
 export const Aphenos = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const statPreviewRef = useRef(null);
   const history = useNavigate();
   const goBack = () => {
     history("/world-map");
   };
+
+  const closeModal = () => setIsModalOpen(false);
 
   const showStatPreview = () => {
     statPreviewRef.current.style.visibility = "visible";
@@ -18,6 +22,7 @@ export const Aphenos = () => {
   };
 
   const openModal = () => {
+    setIsModalOpen(true);
     console.log("modal open");
   };
 
@@ -36,6 +41,7 @@ export const Aphenos = () => {
         «
       </div>
       <div className="aphenosImgWrapper">
+        {isModalOpen ? <StatsModal closeModal={closeModal} /> : null}
         <div onMouseLeave={hideStatPreview} onMouseOver={showStatPreview} className="meWrapper">
           <div ref={statPreviewRef} className="statPreview">
             <div className="flex statPreviewInner">
