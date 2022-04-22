@@ -75,7 +75,7 @@ const Landing = () => {
         <h3 className="itemd">Welcome to Fight Night.</h3>
         <div className="navButton">
           <Link to="/character-inventory">Inventory</Link>&nbsp;&nbsp;&nbsp;<Link to="/fight-logic">Arena</Link>&nbsp;&nbsp;&nbsp;
-          <Link to="/world-map">World Map</Link>
+          <Link to="/world-map">World Map</Link>&nbsp;&nbsp;&nbsp;
         </div>
         {!config.account ? (
           <button onClick={connect}>Connect Wallet</button>

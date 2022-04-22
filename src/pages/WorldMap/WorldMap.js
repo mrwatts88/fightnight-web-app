@@ -1,6 +1,7 @@
 import React from "react";
 import "./WorldMap.css";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const WorldMap = () => {
   const history = useNavigate();
@@ -21,7 +22,15 @@ export const WorldMap = () => {
       >
         «
       </div>
-      <img src={"map.png"}></img>
+      <div className="worldMapWrapper">
+        <Link to="/aphenos-map" className="aphenosClickTarget" />
+        <div className="gamosClickTarget" />
+        <div className="faunalynClickTarget" />
+        <div className="okanClickTarget" />
+        <Link to="/mistLands-map" className="mistLandsClickTarget" />
+        <div className="nurmockClickTarget" />
+        <img src={"map1.png"}></img>
+      </div>
     </div>
   );
 };
