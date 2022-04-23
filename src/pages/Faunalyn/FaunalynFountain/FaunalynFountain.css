@@ -1,0 +1,124 @@
+.mapFaunalynFountain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("parchment.jpg");
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  height: 100%;
+}
+
+.faunalynFountain {
+  height: 781px;
+}
+
+.faunalynFountainImgWrapper {
+  position: relative;
+}
+
+.meWrapperFountain {
+  position: absolute;
+  top: 390px;
+  right: 573px;
+}
+
+.meWrapperFountain1 {
+  position: absolute;
+  top: 402px;
+  right: 179px;
+}
+
+.meWrapperFountain2 {
+  position: absolute;
+  top: 222px;
+  right: 631px;
+}
+
+.meWrapperFountain3 {
+  position: absolute;
+  top: 150px;
+  right: 245px;
+}
+
+.meFountain {
+  height: 60px;
+}
+
+.statPreviewFountain div {
+  align-self: center;
+}
+
+.statPreviewFountain {
+  display: flex;
+  justify-content: space-between;
+  padding: 7px 15px;
+  border-radius: 10px;
+  visibility: hidden;
+  border: 3px solid gold;
+  background: white;
+}
+.statPreviewFountain1 {
+  display: flex;
+  justify-content: space-between;
+  padding: 7px 15px;
+  border-radius: 10px;
+  visibility: hidden;
+  border: 3px solid gold;
+  background: white;
+}
+.statPreviewFountain2 {
+  display: flex;
+  justify-content: space-between;
+  padding: 7px 15px;
+  border-radius: 10px;
+  visibility: hidden;
+  border: 3px solid gold;
+  background: white;
+}
+.statPreviewFountain3 {
+  display: flex;
+  justify-content: space-between;
+  padding: 7px 15px;
+  border-radius: 10px;
+  visibility: hidden;
+  border: 3px solid gold;
+  background: white;
+}
+
+.statPreviewInnerFountain {
+  height: 15px;
+  margin-right: 10px;
+}
+.statPreviewInnerFountain1 {
+  height: 15px;
+  margin-right: 10px;
+}
+.statPreviewInnerFountain2 {
+  height: 15px;
+  margin-right: 10px;
+}
+.statPreviewInnerFountain3 {
+  height: 15px;
+  margin-right: 10px;
+}
+
+.statPreviewInnerFountain:last-child {
+  margin-right: 0;
+}
+.statPreviewInnerFountain1:last-child {
+  margin-right: 0;
+}
+.statPreviewInnerFountain2:last-child {
+  margin-right: 0;
+}
+.statPreviewInnerFountain3:last-child {
+  margin-right: 0;
+}
+
+.graphFountain {
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+}

@@ -1,0 +1,22 @@
+.mapFaunalyn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("parchment.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.faunalyn {
+  position: relative;
+}
+
+.faunalynFountainClickTarget {
+  position: absolute;
+  top: 222px;
+  right: 287px;
+  width: 60px;
+  height: 60px;
+}

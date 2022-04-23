@@ -1,0 +1,22 @@
+.mapNurmock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("parchment.jpg");
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  height: 100%;
+  width: 100%;
+}
+
+.nurmock {
+  position: relative;
+}
+
+.nurmockCenterClickTarget {
+  position: absolute;
+  bottom: 225px;
+  left: 723px;
+  width: 90px;
+  height: 90px;
+}

@@ -24,11 +24,12 @@ export const WorldMap = () => {
       </div>
       <div className="worldMapWrapper">
         <Link to="/aphenos-map" className="aphenosClickTarget" />
-        <div className="gamosClickTarget" />
-        <div className="faunalynClickTarget" />
+        <Link to="/gamos-map" className="gamosClickTarget" />
+
+        <Link to="/faunalyn-map" className="faunalynClickTarget" />
         <div className="okanClickTarget" />
         <Link to="/mistLands-map" className="mistLandsClickTarget" />
-        <div className="nurmockClickTarget" />
+        <Link to="/nurmock-map" className="nurmockClickTarget" />
         <img src={"map1.png"}></img>
       </div>
     </div>

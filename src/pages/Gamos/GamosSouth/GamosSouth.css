@@ -1,0 +1,26 @@
+.mapGamosSouth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("parchment.jpg");
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  height: 100%;
+  width: 100%;
+}
+
+.gamosSouth {
+  position: relative;
+}
+
+.gamosNorthClickTarget {
+  -webkit-text-stroke-width: medium;
+  position: absolute;
+  top: 0px;
+  left: 450px;
+  justify-content: center;
+  width: 200px;
+  margin: 0px;
+  height: 23px;
+  background-color: rgba(206, 206, 206, 0.877);
+}
