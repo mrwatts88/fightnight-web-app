@@ -13,7 +13,7 @@ function CharacterGridItem({ character }) {
   const selectCharacter = () => {
     setWalletData({
       ...walletData,
-      currentCharacterId: CharacterIds[character.type],
+      currentCharacter: { id: CharacterIds[character.type], url: character.url, metaData },
     });
   };
 
@@ -28,7 +28,7 @@ function CharacterGridItem({ character }) {
   return (
     <img
       onClick={selectCharacter}
-      className={`item ${walletData.currentCharacterId === CharacterIds[character.type] ? "selectedCharacter" : ""}`}
+      className={`item ${walletData.currentCharacter?.id === CharacterIds[character.type] ? "selectedCharacter" : ""}`}
       src={metaData.image}
       onMouseEnter={() => setIsShown(true)}
       onMouseLeave={() => setIsShown(false)}

@@ -30,6 +30,14 @@
   flex: 1;
 }
 
+.modalBodySectionRight {
+  color: #423e41;
+  font-weight: 700;
+  background-color: #acdfdf;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
 .equipmentSword {
   grid-row-end: 4;
   grid-column-start: 1;
