@@ -1,9 +1,42 @@
-var express = require("express");
-var router = express.Router();
+const express = require("express");
+const router = express.Router();
+const LootTable = require("loot-table");
 
 function randomInt(max) {
   return Math.floor(Math.random() * (max + 1));
 }
+
+const loot = new LootTable();
+loot.add("sword", 30);
+loot.add("shield", 15);
+loot.add("helm", 25);
+loot.add(null, 30);
+
+const typeToRangeMap = { sword: { attack: [1, 3], power: [1, 3] }, shield: { defence: [1, 3] }, helm: { defence: [1, 3] } };
+const randomFromRange = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+
+router.get("/drop-loot", function (req, res, ny) {
+  const item = loot.choose();
+
+  if (!item) {
+    return res.json({ item: null });
+  }
+  const ranges = typeToRangeMap[item];
+  let metaData;
+  if (item == "sword") {
+    const [minAttack, maxAttack] = ranges.attack;
+    const attack = randomFromRange(minAttack, maxAttack);
+    const [minPower, maxPower] = ranges.power;
+    const power = randomFromRange(minPower, maxPower);
+    metaData = { type: "sword", attack, power };
+  }
+  if (["shield", "helm"].includes(item)) {
+    const [minDefence, maxDefence] = ranges.defence;
+    const defence = randomFromRange(minDefence, maxDefence);
+    metaData = { type: item, defence };
+  }
+  return res.json({ item: metaData });
+});
 
 /* GET home page. */
 router.get("/", function (req, res, next) {

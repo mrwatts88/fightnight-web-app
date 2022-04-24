@@ -25,15 +25,15 @@ x[] mobile view
 [x] make cities clickable
 [x] Move fight logic to server
 
-
 Notes
-win fight 
+win fight
 server
-  - does get loot?
-  - determine type of loot
-  - determine stats from eligible range
-  - programatically upload metadata to ipfs
-    - create metadata points to existing image
-    - returns url
-  - mint nft with url we just got
-    - safeMint
+x- does get loot?
+x- determine type of loot
+x- determine stats from eligible range
+
+- programatically upload metadata to ipfs
+  - create metadata points to existing image
+  - returns url
+- mint nft with url we just got
+  - safeMint
