@@ -27,7 +27,8 @@ export const WorldMap = () => {
         <Link to="/gamos-map" className="gamosClickTarget" />
 
         <Link to="/faunalyn-map" className="faunalynClickTarget" />
-        <div className="okanClickTarget" />
+        <Link to="/okan-map" className="okanClickTarget" />
+
         <Link to="/mistLands-map" className="mistLandsClickTarget" />
         <Link to="/nurmock-map" className="nurmockClickTarget" />
         <img src={"map1.png"}></img>

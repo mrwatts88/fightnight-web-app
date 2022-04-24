@@ -13,6 +13,7 @@ import { FaunalynFountain } from "./pages/Faunalyn/FaunalynFountain/FaunalynFoun
 import { Gamos } from "./pages/Gamos/Gamos";
 import { GamosSouth } from "./pages/Gamos/GamosSouth/GamosSouth";
 import { NurmockCenter } from "./pages/Nurmock/NurmockCenter/NurmockCenter";
+import { Okan } from "./pages/Okan/Okan";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route path="/gamos-map" element={<Gamos />} />
             <Route path="/gamosSouth-map" element={<GamosSouth />} />
             <Route path="/nurmockCenter-map" element={<NurmockCenter />} />
+            <Route path="/okan-map" element={<Okan />} />
           </Routes>
         </div>
       </WalletContext>
