@@ -1,14 +1,21 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React from "react";
+import React, { useContext } from "react";
 import "./CharacterGridItem.css";
 import { useState, useEffect } from "react";
+import { walletContext } from "../../context/WalletContext";
+import { CharacterIds } from "../CharacterGrid/CharacterGrid";
 
 function CharacterGridItem({ character }) {
-  // eslint-disable-next-line no-unused-vars
+  const { walletData, setWalletData } = useContext(walletContext);
   const [isShown, setIsShown] = useState(false);
-
   const [metaData, setMetaData] = useState({});
-  console.log(metaData);
+
+  const selectCharacter = () => {
+    setWalletData({
+      ...walletData,
+      currentCharacterId: CharacterIds[character.type],
+    });
+  };
 
   useEffect(() => {
     if (!character.url) return;
@@ -18,7 +25,15 @@ function CharacterGridItem({ character }) {
       })
       .then(setMetaData);
   }, []);
-  return <img className="item" src={metaData.image} onMouseEnter={() => setIsShown(true)} onMouseLeave={() => setIsShown(false)}></img>;
+  return (
+    <img
+      onClick={selectCharacter}
+      className={`item ${walletData.currentCharacterId === CharacterIds[character.type] ? "selectedCharacter" : ""}`}
+      src={metaData.image}
+      onMouseEnter={() => setIsShown(true)}
+      onMouseLeave={() => setIsShown(false)}
+    ></img>
+  );
 }
 
 export default CharacterGridItem;

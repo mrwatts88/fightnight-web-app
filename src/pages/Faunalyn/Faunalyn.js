@@ -24,7 +24,7 @@ export const Faunalyn = () => {
       </div>
       <div className="faunalyn">
         <Link to="/faunalynFountain-map" className="faunalynFountainClickTarget" />
-        <img src={"Faunalynpng.png"}></img>
+        <img alt="faunalyn" src={"Faunalynpng.png"}></img>
       </div>
     </div>
   );

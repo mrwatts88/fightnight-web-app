@@ -26,7 +26,7 @@ function CharacterGrid() {
 
   function populateClass(num, url, type) {
     const arr = ["", "", ""];
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 1; i++) {
       if (num >= i + 1) {
         arr[i] = { url, type };
       }

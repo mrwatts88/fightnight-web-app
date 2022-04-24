@@ -24,7 +24,7 @@ export const Nurmock = () => {
       </div>
       <div className="nurmock">
         <Link to="/nurmockCenter-map" className="nurmockCenterClickTarget" />
-        <img src={"Nurmock.jpg"}></img>
+        <img src={"Nurmock1.jpg"}></img>
       </div>
     </div>
   );

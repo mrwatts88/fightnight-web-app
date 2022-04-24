@@ -1,17 +1,22 @@
 ### FightNight
 
-x[] Check stat details / Check character equipment
+[x] Choose active character
+x[] Check stat details
 x[] Integrate character stats into fights
-x[] Make a click target config system
-x[] Integrate swing speed
-x[] Make city maps
-[] Loot contract
+x[] Rework fight logic
+x[] Protected routes
+x[] Loot contract
 [] Staking contract
+[] Check character equipment
 [] Check health
-[] Check inventory/
+[] Check inventory
 [] Select opponent and fight
 [] Get herbs and heal
-[] mobile view
+x[] create a city config
+x[] Make a click target config system
+x[] create a click target tool
+x[] mobile view
+[x] Make city maps
 [x] Place character in city when visiting
 [x] Click character for stat preview
 [x] deploy backend

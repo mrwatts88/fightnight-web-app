@@ -1,3 +1,6 @@
 .item {
     height: 150px;
 }
+.selectedCharacter {
+    border-bottom: 4px solid black;
+}
