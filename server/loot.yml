@@ -1,0 +1,922 @@
+/// loot table
+
+/// great sword
+damaged great sword:
+  1:
+    attack: [1, 3]
+    power: [1, 4]
+    speed: [140]
+
+plain great sword:
+  1:
+    attack: [3, 6]
+    power: [4, 7]
+    speed: [140]
+
+common great sword:
+  1:
+    attack: [6, 8]
+    power: [7, 9]
+    speed: [140]
+
+infantry great sword:
+  1:
+    attack: [8, 11]
+    power: [9, 12]
+    speed: [140]
+
+steel great sword:
+  1:
+    attack: [11, 13]
+    power: [12, 14]
+    zeal: [1]
+    speed: [140]
+
+forest crafted great sword:
+  1:
+    attack: [11, 13]
+    power: [12, 14]
+    hitpoints: [1]
+    speed: [140]
+
+mountain forged great sword:
+  1:
+    attack: [11, 13]
+    power: [12, 14]
+    defence: [1]
+    speed: [140]
+
+knights great sword:
+  1:
+    attack: [13, 16]
+    power: [14, 17]
+    zeal: [2]
+    speed: [140]
+
+elven great sword:
+  1:
+    attack: [13, 16]
+    power: [14, 17]
+    hitpoints: [2]
+    speed: [140]
+
+dwarven great sword:
+  1:
+    attack: [13, 16]
+    power: [14, 17]
+    defence: [2]
+    speed: [140]
+
+imperial great sword:
+  1:
+    attack: [16, 18]
+    power: [17, 19]
+    zeal: [3]
+    speed: [140]
+
+alya great sword:
+  1:
+    attack: [16, 18]
+    power: [17, 19]
+    hitpoints: [3]
+    speed: [140]
+
+quaking great sword:
+  1:
+    attack: [16, 18]
+    power: [17, 19]
+    defence: [3]
+    speed: [140]
+
+obsidian great sword:
+  1:
+    attack: [18, 21]
+    power: [19, 22]
+    zeal: [4]
+    speed: [140]
+
+calwa great sword:
+  1:
+    attack: [18, 21]
+    power: [19, 22]
+    hitpoints: [4]
+    speed: [140]
+
+embric great sword:
+  1:
+    attack: [18, 21]
+    power: [19, 22]
+    defence: [4]
+    speed: [140]
+
+artisan great sword:
+  1:
+    attack: [21, 23]
+    power: [22, 24]
+    zeal: [5]
+    speed: [140]
+
+daiil great sword:
+  1:
+    attack: [21, 23]
+    power: [22, 24]
+    hitpoints: [5]
+    speed: [140]
+
+lava great sword:
+  1:
+    attack: [21, 23]
+    power: [22, 24]
+    defence: [5]
+    speed: [140]
+
+tavia's great sword:
+  1:
+    attack: [22, 27]
+    power: [23, 28]
+    zeal: [6]
+    speed: [140]
+
+lyari's great sword:
+  1:
+    attack: [22, 27]
+    power: [23, 28]
+    hitpoints: [6]
+    speed: [140]
+
+thorgrin's great sword:
+  1:
+    attack: [22, 27]
+    power: [23, 28]
+    defence: [6]
+    speed: [140]
+
+/// War Hammer
+damaged war hammer:
+  1:
+    attack: [1, 3]
+    power: [1, 4]
+    speed: [140]
+
+plain war hammer:
+  1:
+    attack: [3, 6]
+    power: [4, 7]
+    speed: [140]
+
+common war hammer:
+  1:
+    attack: [6, 8]
+    power: [7, 9]
+    speed: [140]
+
+infantry war hammer:
+  1:
+    attack: [8, 11]
+    power: [9, 12]
+    speed: [140]
+
+steel war hammer:
+  1:
+    attack: [11, 13]
+    power: [12, 14]
+    zeal: [1]
+    speed: [140]
+
+forest crafted war hammer:
+  1:
+    attack: [11, 13]
+    power: [12, 14]
+    hitpoints: [1]
+    speed: [140]
+
+mountain forged war hammer:
+  1:
+    attack: [11, 13]
+    power: [12, 14]
+    defence: [1]
+    speed: [140]
+
+knights war hammer:
+  1:
+    attack: [13, 16]
+    power: [14, 17]
+    zeal: [2]
+    speed: [140]
+
+elven war hammer:
+  1:
+    attack: [13, 16]
+    power: [14, 17]
+    hitpoints: [2]
+    speed: [140]
+
+dwarven war hammer:
+  1:
+    attack: [13, 16]
+    power: [14, 17]
+    defence: [2]
+    speed: [140]
+
+imperial war hammer:
+  1:
+    attack: [16, 18]
+    power: [17, 19]
+    zeal: [3]
+    speed: [140]
+
+alya war hammer:
+  1:
+    attack: [16, 18]
+    power: [17, 19]
+    hitpoints: [3]
+    speed: [140]
+
+quaking war hammer:
+  1:
+    attack: [16, 18]
+    power: [17, 19]
+    defence: [3]
+    speed: [140]
+
+obsidian war hammer:
+  1:
+    attack: [18, 21]
+    power: [19, 22]
+    zeal: [4]
+    speed: [140]
+
+calwa war hammer:
+  1:
+    attack: [18, 21]
+    power: [19, 22]
+    hitpoints: [4]
+    speed: [140]
+
+embric war hammer:
+  1:
+    attack: [18, 21]
+    power: [19, 22]
+    defence: [4]
+    speed: [140]
+
+artisan war hammer:
+  1:
+    attack: [21, 23]
+    power: [22, 24]
+    zeal: [5]
+    speed: [140]
+
+daiil war hammer:
+  1:
+    attack: [21, 23]
+    power: [22, 24]
+    hitpoints: [5]
+    speed: [140]
+
+lava war hammer:
+  1:
+    attack: [21, 23]
+    power: [22, 24]
+    defence: [5]
+    speed: [140]
+
+tavia's war hammer:
+  1:
+    attack: [22, 27]
+    power: [23, 28]
+    zeal: [6]
+    speed: [140]
+
+lyari's war hammer:
+  1:
+    attack: [22, 27]
+    power: [23, 28]
+    hitpoints: [6]
+    speed: [140]
+
+thorgrin's war hammer:
+  1:
+    attack: [22, 27]
+    power: [23, 28]
+    defence: [6]
+    speed: [140]
+
+/// lance
+damaged lance:
+  1:
+    power: [1, 3]
+    attack: [1, 4]
+    speed: [140]
+
+plain lance:
+  1:
+    power: [3, 6]
+    attack: [4, 7]
+    speed: [140]
+
+common lance:
+  1:
+    power: [6, 8]
+    attack: [7, 9]
+    speed: [140]
+
+infantry lance:
+  1:
+    power: [8, 11]
+    attack: [9, 12]
+    speed: [140]
+
+steel lance:
+  1:
+    power: [11, 13]
+    attack: [12, 14]
+    zeal: [1]
+    speed: [140]
+
+forest crafted lance:
+  1:
+    power: [11, 13]
+    attack: [12, 14]
+    hitpoints: [1]
+    speed: [140]
+
+mountain forged lance:
+  1:
+    power: [11, 13]
+    attack: [12, 14]
+    defence: [1]
+    speed: [140]
+
+knights lance:
+  1:
+    power: [13, 16]
+    attack: [14, 17]
+    zeal: [2]
+    speed: [140]
+
+elven lance:
+  1:
+    power: [13, 16]
+    attack: [14, 17]
+    hitpoints: [2]
+    speed: [140]
+
+dwarven lance:
+  1:
+    power: [13, 16]
+    attack: [14, 17]
+    defence: [2]
+    speed: [140]
+
+imperial lance:
+  1:
+    power: [16, 18]
+    attack: [17, 19]
+    zeal: [3]
+    speed: [140]
+
+alya lance:
+  1:
+    power: [16, 18]
+    attack: [17, 19]
+    hitpoints: [3]
+    speed: [140]
+
+quaking lance:
+  1:
+    power: [16, 18]
+    attack: [17, 19]
+    defence: [3]
+    speed: [140]
+
+obsidian lance:
+  1:
+    power: [18, 21]
+    attack: [19, 22]
+    zeal: [4]
+    speed: [140]
+
+calwa lance:
+  1:
+    power: [18, 21]
+    attack: [19, 22]
+    hitpoints: [4]
+    speed: [140]
+
+embric lance:
+  1:
+    power: [18, 21]
+    attack: [19, 22]
+    defence: [4]
+    speed: [140]
+
+artisan lance:
+  1:
+    power: [21, 23]
+    attack: [22, 24]
+    zeal: [5]
+    speed: [140]
+
+daiil lance:
+  1:
+    power: [21, 23]
+    attack: [22, 24]
+    hitpoints: [5]
+    speed: [140]
+
+lava lance:
+  1:
+    power: [21, 23]
+    attack: [22, 24]
+    defence: [5]
+    speed: [140]
+
+tavia's lance:
+  1:
+    power: [22, 27]
+    attack: [23, 28]
+    zeal: [6]
+    speed: [140]
+
+lyari's lance:
+  1:
+    power: [22, 27]
+    attack: [23, 28]
+    hitpoints: [6]
+    speed: [140]
+
+thorgrin's lance:
+  1:
+    power: [22, 27]
+    attack: [23, 28]
+    defence: [6]
+    speed: [140]
+
+/// light sword
+infantry light sword:
+  1:
+    power: [6, 10]
+    attack: [9, 13]
+    speed: [125]
+
+steel light sword:
+  1:
+    power: [10, 12]
+    attack: [13, 16]
+    zeal: [1]
+    speed: [125]
+
+forest crafted light sword:
+  1:
+    power: [10, 12]
+    attack: [13, 16]
+    hitpoints: [1]
+    speed: [125]
+
+mountain forged light sword:
+  1:
+    power: [10, 12]
+    attack: [13, 16]
+    defence: [1]
+    speed: [125]
+
+knights light sword:
+  1:
+    power: [12, 15]
+    attack: [16, 18]
+    zeal: [2]
+    speed: [125]
+
+elven light sword:
+  1:
+    power: [12, 15]
+    attack: [16, 18]
+    hitpoints: [2]
+    speed: [125]
+
+dwarven light sword:
+  1:
+    power: [12, 15]
+    attack: [16, 18]
+    defence: [2]
+    speed: [125]
+
+imperial light sword:
+  1:
+    power: [15, 17]
+    attack: [18, 21]
+    zeal: [3]
+    speed: [125]
+
+alya light sword:
+  1:
+    power: [15, 17]
+    attack: [18, 21]
+    hitpoints: [3]
+    speed: [125]
+
+quaking light sword:
+  1:
+    power: [15, 17]
+    attack: [18, 21]
+    defence: [3]
+    speed: [125]
+
+obsidian light sword:
+  1:
+    power: [17, 20]
+    attack: [21, 23]
+    zeal: [4]
+    speed: [125]
+
+calwa light sword:
+  1:
+    power: [17, 20]
+    attack: [21, 23]
+    hitpoints: [4]
+    speed: [125]
+
+embric light sword:
+  1:
+    power: [17, 20]
+    attack: [21, 23]
+    defence: [4]
+    speed: [125]
+
+artisan light sword:
+  1:
+    power: [20, 22]
+    attack: [23, 26]
+    zeal: [5]
+    speed: [125]
+  
+daiil light sword:
+  1:
+    power: [20, 22]
+    attack: [23, 26]
+    hitpoints: [5]
+    speed: [125]
+
+lava light sword:
+  1:
+    power: [20, 22]
+    attack: [23, 26]
+    defence: [5]
+    speed: [125] 
+
+tavia's light sword:
+  1:
+    power: [21, 25]
+    attack: [25, 28]
+    zeal: [6]
+    speed: [125]
+
+lyari's light sword:
+  1:
+    power: [21, 25]
+    attack: [25, 28]
+    hitpoints: [6]
+    speed: [125]
+
+thorgrin's light sword:
+  1:
+    power: [21, 25]
+    attack: [25, 28]
+    defence: [6]
+    speed: [125]
+
+/// battle axe
+infantry battle axe:
+  1:
+    power: [6, 10]
+    attack: [9, 13]
+    speed: [125]
+
+steel battle axe:
+  1:
+    power: [10, 12]
+    attack: [13, 16]
+    zeal: [1]
+    speed: [125]
+
+forest crafted battle axe:
+  1:
+    power: [10, 12]
+    attack: [13, 16]
+    hitpoints: [1]
+    speed: [125]
+
+mountain forged battle axe:
+  1:
+    power: [10, 12]
+    attack: [13, 16]
+    defence: [1]
+    speed: [125]
+
+knights battle axe:
+  1:
+    power: [12, 15]
+    attack: [16, 18]
+    zeal: [2]
+    speed: [125]
+
+elven battle axe:
+  1:
+    power: [12, 15]
+    attack: [16, 18]
+    hitpoints: [2]
+    speed: [125]
+
+dwarven battle axe:
+  1:
+    power: [12, 15]
+    attack: [16, 18]
+    defence: [2]
+    speed: [125]
+
+imperial battle axe:
+  1:
+    power: [15, 17]
+    attack: [18, 21]
+    zeal: [3]
+    speed: [125]
+
+alya battle axe:
+  1:
+    power: [15, 17]
+    attack: [18, 21]
+    hitpoints: [3]
+    speed: [125]
+
+quaking battle axe:
+  1:
+    power: [15, 17]
+    attack: [18, 21]
+    defence: [3]
+    speed: [125]
+
+obsidian battle axe:
+  1:
+    power: [17, 20]
+    attack: [21, 23]
+    zeal: [4]
+    speed: [125]
+
+calwa battle axe:
+  1:
+    power: [17, 20]
+    attack: [21, 23]
+    hitpoints: [4]
+    speed: [125]
+
+embric battle axe:
+  1:
+    power: [17, 20]
+    attack: [21, 23]
+    defence: [4]
+    speed: [125]
+
+artisan battle axe:
+  1:
+    power: [20, 22]
+    attack: [23, 26]
+    zeal: [5]
+    speed: [125]
+  
+daiil battle axe:
+  1:
+    power: [20, 22]
+    attack: [23, 26]
+    hitpoints: [5]
+    speed: [125]
+  
+lava battle axe:
+  1:
+    power: [20, 22]
+    attack: [23, 26]
+    defence: [5]
+    speed: [125]
+ 
+tavia's battle axe:
+  1:
+    power: [21, 25]
+    attack: [25, 28]
+    zeal: [6]
+    speed: [125]
+
+lyari's battle axe:
+  1:
+    power: [21, 25]
+    attack: [25, 28]
+    hitpoints: [6]
+    speed: [125]
+
+thorgrin's battle axe:
+  1:
+    power: [21, 25]
+    attack: [25, 28]
+    defence: [6]
+    speed: [125]
+
+/// bow
+infantry bow:
+  1:
+    power: [5, 9]
+    attack: [5, 9]
+    speed: [110]
+
+steel bow:
+  1:
+    power: [9, 11]
+    attack: [9, 11]
+    zeal: [1]
+    speed: [110]
+
+forest crafted bow:
+  1:
+    power: [9, 11]
+    attack: [9, 11]
+    hitpoints: [1]
+    speed: [110]
+
+knights bow:
+  1:
+    power: [11, 14]
+    attack: [11, 14]
+    zeal: [2]
+    speed: [110]
+
+elven bow:
+  1:
+    power: [11, 14]
+    attack: [11, 14]
+    hitpoints: [2]
+    speed: [110]
+
+imperial bow:
+  1:
+    power: [14, 17]
+    attack: [14, 17]
+    zeal: [3]
+    speed: [110]
+
+alya bow:
+  1:
+    power: [14, 17]
+    attack: [14, 17]
+    hitpoints: [3]
+    speed: [110]
+
+obsidian bow:
+  1:
+    power: [17, 19]
+    attack: [17, 19]
+    zeal: [4]
+    speed: [110]
+
+calwa bow:
+  1:
+    power: [17, 19]
+    attack: [17, 19]
+    hitpoints: [4]
+    speed: [110]
+
+artisan bow:
+  1:
+    power: [19, 21]
+    attack: [19, 21]
+    zeal: [5]
+    speed: [110]
+
+daiil bow:
+  1:
+    power: [19, 21]
+    attack: [19, 21]
+    hitpoints: [5]
+    speed: [110]
+
+tavia's bow:
+  1:
+    power: [20, 23]
+    attack: [20, 23]
+    zeal: [6]
+    speed: [110]
+
+lyari's bow:
+  1:
+    power: [20, 23]
+    attack: [20, 23]
+    hitpoints: [6]
+    speed: [110]
+
+/// orb
+damaged orb:
+  1:
+    power: [1, 3]
+    attack: [1, 5]
+    speed: [125]
+
+common orb:
+  1:
+    power: [3, 6]
+    attack: [5, 8]
+    speed: [125]
+
+strange orb:
+  1:
+    power: [10, 12]
+    attack: [14, 17]
+    speed: [125]
+
+magic orb:
+  1:
+    power: [12, 15]
+    attack: [18, 20]
+    speed: [125]
+
+static orb:
+  1:
+    power: [15, 17]
+    attack: [21, 24]
+    speed: [125]
+
+flaming orb:
+  1:
+    power: [17, 20]
+    attack: [25, 27]
+    speed: [125]
+
+lightning orb:
+  1:
+    power: [20, 22]
+    attack: [29, 32]
+    speed: [125]
+
+arc's orb:
+  1:
+    power: [21, 25]
+    attack: [31, 34]
+    speed: [125]
+
+/// staff
+damaged staff:
+  1:
+    attack: [1, 2]
+    power: [1, 5]
+    speed: [1.35]
+
+plain staff:
+  1:
+    attack: [2, 5]
+    power: [5, 7]
+    speed: [1.35]
+
+common staff:
+  1:
+    attack: [5, 7]
+    power: [7, 10]
+    speed: [1.35]
+
+strange staff:
+  1:
+    attack: [8, 13]
+    power: [10, 15]
+    speed: [1.35]
+
+magic staff:
+  1:
+    attack: [13, 16]
+    power: [15, 18]
+    speed: [1.35]
+
+static staff:
+  1:
+    attack: [18, 20]
+    power: [18, 20]
+    speed: [1.35]
+
+flaming staff:
+  1:
+    attack: [21, 24]
+    power: [20, 23]
+    speed: [1.35]
+
+lightning staff:
+  1:
+    attack: [24, 27]
+    power: [23, 25]
+    speed: [1.35]
+
+arc's staff:
+  1:
+    attack: [28, 30]
+    power: [25, 28]
+    speed: [1.35]
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+///armor
+/// light helm
+
+///light chest piece

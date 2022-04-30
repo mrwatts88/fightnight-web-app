@@ -1,0 +1,331 @@
+damaged light helm:
+  1:
+    defence: [5, 7]
+    haste: [5]
+  2:
+    defence: [6, 8]
+    haste: [5]
+  3:
+    defence: [7, 9]
+    haste: [5]
+  4:
+    defence: [8, 10]
+    haste: [5]
+  5:
+    defence: [10, 12]
+    haste: [5]
+
+plain light helm:
+  1:
+    defence: [11, 13]
+    haste: [5]
+  2:
+    defence: [12, 14]
+    haste: [5]
+  3:
+    defence: [13, 15]
+    haste: [5]
+  4:
+    defence: [14, 16]
+    haste: [5]
+  5:
+    defence: [16, 18]
+    haste: [5]
+
+common light helm:
+  1:
+    defence: [17, 19]
+    haste: [5]
+  2:
+    defence: [18, 20]
+    haste: [5]
+  3:
+    defence: [19, 21]
+    haste: [5]
+  4:
+    defence: [20, 22]
+    haste: [5]
+  5:
+    defence: [22, 24]
+    haste: [5]
+
+infantry light helm:
+  1:
+    defence: [23, 25]
+    haste: [5]
+  2:
+    defence: [24, 26]
+    haste: [5]
+  3:
+    defence: [25, 27]
+    haste: [5]
+  4:
+    defence: [26, 28]
+    haste: [5]
+  5:
+    defence: [28, 30]
+    haste: [5]
+
+steel light helm:
+  1:
+    defence: [29, 31]
+    haste: [5]
+    zeal: [1]
+  2:
+    defence: [30, 32]
+    haste: [5]
+    zeal: [1]
+  3:
+    defence: [31, 33]
+    haste: [5]
+    zeal: [1]
+  4:
+    defence: [32, 34]
+    haste: [5]
+    zeal: [1]
+  5:
+    defence: [34, 36]
+    haste: [5]
+    zeal: [1]
+
+forest crafted light helm:
+  1:
+    defence: [29, 31]
+    haste: [5]
+    hitpoints: [1]
+  2:
+    defence: [30, 32]
+    haste: [5]
+    hitpoints: [1]
+  3:
+    defence: [31, 33]
+    haste: [5]
+    hitpoints: [1]
+  4:
+    defence: [32, 34]
+    haste: [5]
+    hitpoints: [1]
+  5:
+    defence: [34, 36]
+    haste: [5]
+    hitpoints: [1]
+
+knights light helm:
+  1:
+    defence: [35, 37]
+    haste: [5]
+    zeal: [2]
+  2:
+    defence: [36, 38]
+    haste: [5]
+    zeal: [2]
+  3:
+    defence: [37, 39]
+    haste: [5]
+    zeal: [2]
+  4:
+    defence: [38, 40]
+    haste: [5]
+    zeal: [2]
+  5:
+    defence: [40, 42]
+    haste: [5]
+    zeal: [2]
+
+elven light helm:
+  1:
+    defence: [35, 37]
+    haste: [5]
+    hitpoints: [2]
+  2:
+    defence: [36, 38]
+    haste: [5]
+    hitpoints: [2]
+  3:
+    defence: [37, 39]
+    haste: [5]
+    hitpoints: [2]
+  4:
+    defence: [38, 40]
+    haste: [5]
+    hitpoints: [2]
+  5:
+    defence: [40, 42]
+    haste: [5]
+    hitpoints: [2]
+
+imperial light helm:
+  1:
+    defence: [41, 43]
+    haste: [5]
+    zeal: [3]
+  2:
+    defence: [42, 44]
+    haste: [5]
+    zeal: [3]
+  3:
+    defence: [43, 45]
+    haste: [5]
+    zeal: [3]
+  4:
+    defence: [44, 46]
+    haste: [5]
+    zeal: [3]
+  5:
+    defence: [46, 48]
+    haste: [5]
+    zeal: [3]
+
+alya light helm:
+  1:
+    defence: [41, 43]
+    haste: [5]
+    hitpoints: [3]
+  2:
+    defence: [42, 44]
+    haste: [5]
+    hitpoints: [3]
+  3:
+    defence: [43, 45]
+    haste: [5]
+    hitpoints: [3]
+  4:
+    defence: [44, 46]
+    haste: [5]
+    hitpoints: [3]
+  5:
+    defence: [46, 48]
+    haste: [5]
+    hitpoints: [3]
+
+obsidian light helm:
+  1:
+    defence: [47, 49]
+    haste: [5]
+    zeal: [4]
+  2:
+    defence: [48, 50]
+    haste: [5]
+    zeal: [4]
+  3:
+    defence: [49, 51]
+    haste: [5]
+    zeal: [4]
+  4:
+    defence: [50, 52]
+    haste: [5]
+    zeal: [4]
+  5:
+    defence: [52, 54]
+    haste: [5]
+    zeal: [4]
+
+calwa light helm:
+  1:
+    defence: [47, 49]
+    haste: [5]
+    hitpoints: [4]
+  2:
+    defence: [48, 50]
+    haste: [5]
+    hitpoints: [4]
+  3:
+    defence: [49, 51]
+    haste: [5]
+    hitpoints: [4]
+  4:
+    defence: [50, 52]
+    haste: [5]
+    hitpoints: [4]
+  5:
+    defence: [52, 54]
+    haste: [5]
+    hitpoints: [4]
+
+artisan light helm:
+  1:
+    defence: [53, 55]
+    haste: [5]
+    zeal: [5]
+  2:
+    defence: [54, 56]
+    haste: [5]
+    zeal: [5]
+  3:
+    defence: [55, 57]
+    haste: [5]
+    zeal: [5]
+  4:
+    defence: [56, 58]
+    haste: [5]
+    zeal: [5]
+  5:
+    defence: [58, 60]
+    haste: [5]
+    zeal: [5]
+
+daiil light helm:
+  1:
+    defence: [53, 55]
+    haste: [5]
+    hitpoints: [5]
+  2:
+    defence: [54, 56]
+    haste: [5]
+    hitpoints: [5]
+  3:
+    defence: [55, 57]
+    haste: [5]
+    hitpoints: [5]
+  4:
+    defence: [56, 58]
+    haste: [5]
+    hitpoints: [5]
+  5:
+    defence: [58, 60]
+    haste: [5]
+    hitpoints: [5]
+
+tavia's light helm:
+  1:
+    defence: [59, 61]
+    haste: [5]
+    zeal: [6]
+  2:
+    defence: [60, 62]
+    haste: [5]
+    zeal: [6]
+  3:
+    defence: [61, 63]
+    haste: [5]
+    zeal: [6]
+  4:
+    defence: [62, 64]
+    haste: [5]
+    zeal: [6]
+  5:
+    defence: [64, 66]
+    haste: [5]
+    zeal: [6]
+
+lyari's light helm:
+  1:
+    defence: [59, 61]
+    haste: [5]
+    hitpoints: [6]
+  2:
+    defence: [60, 62]
+    haste: [5]
+    hitpoints: [6]
+  3:
+    defence: [61, 63]
+    haste: [5]
+    hitpoints: [6]
+  4:
+    defence: [62, 64]
+    haste: [5]
+    hitpoints: [6]
+  5:
+    defence: [64, 66]
+    haste: [5]
+    hitpoints: [6]

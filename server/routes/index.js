@@ -6,16 +6,25 @@ function randomInt(max) {
   return Math.floor(Math.random() * (max + 1));
 }
 
+const ethers = require("ethers");
+const pinataSDK = require("@pinata/sdk");
+const pinata = pinataSDK("6e59e321836fcbf43e23", "fa05be203a52fd6706d49b7b6332fff8ae7f1e712574b8c1106fd18858fa0f9d");
+
 const loot = new LootTable();
 loot.add("sword", 30);
 loot.add("shield", 15);
 loot.add("helm", 25);
 loot.add(null, 30);
 
+const lootToImageMap = {
+  sword: "https://gateway.pinata.cloud/ipfs/QmQxDXn39Sgou8exRJZiwUaqCMWw8WyDKSScp6kvjeytGC",
+  shield: "https://gateway.pinata.cloud/ipfs/QmfKvjozYn2Nfc5bmqNQMQS5t7Kc9uvMvNdPQavpipcw4w",
+  helm: "https://gateway.pinata.cloud/ipfs/QmNWhb4xTEFCnwzW1K5psbrzJQo2hFpzXxo32YrTzDveic",
+};
 const typeToRangeMap = { sword: { attack: [1, 3], power: [1, 3] }, shield: { defence: [1, 3] }, helm: { defence: [1, 3] } };
 const randomFromRange = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
-router.get("/drop-loot", function (req, res, ny) {
+router.get("/drop-loot", async function (req, res, ny) {
   const item = loot.choose();
 
   if (!item) {
@@ -28,12 +37,88 @@ router.get("/drop-loot", function (req, res, ny) {
     const attack = randomFromRange(minAttack, maxAttack);
     const [minPower, maxPower] = ranges.power;
     const power = randomFromRange(minPower, maxPower);
-    metaData = { type: "sword", attack, power };
+    metaData = {
+      description: "pointy stick",
+      image: lootToImageMap[item],
+      name: "sword",
+      attributes: [
+        {
+          trait_type: "Level",
+          value: 5,
+        },
+        {
+          display_type: "boost_number",
+          trait_type: "Power",
+          value: power,
+        },
+        {
+          display_type: "boost_number",
+          trait_type: "Attack",
+          value: attack,
+        },
+      ],
+    };
   }
-  if (["shield", "helm"].includes(item)) {
+  if (item == "shield") {
     const [minDefence, maxDefence] = ranges.defence;
     const defence = randomFromRange(minDefence, maxDefence);
-    metaData = { type: item, defence };
+    metaData = {
+      description: "flat board",
+      image: lootToImageMap[item],
+      name: "shield",
+      attributes: [
+        {
+          trait_type: "Level",
+          value: 5,
+        },
+        {
+          display_type: "boost_number",
+          trait_type: "Defence",
+          value: defence,
+        },
+      ],
+    };
+  }
+  if (item == "helm") {
+    const [minDefence, maxDefence] = ranges.defence;
+    const defence = randomFromRange(minDefence, maxDefence);
+    metaData = {
+      description: "head piece",
+      image: lootToImageMap[item],
+      name: "helm",
+      attributes: [
+        {
+          trait_type: "Level",
+          value: 5,
+        },
+        {
+          display_type: "boost_number",
+          trait_type: "Defence",
+          value: defence,
+        },
+      ],
+    };
+  }
+  try {
+    const result = await pinata.pinJSONToIPFS(metaData, {});
+    const daiAddress = "0x53D180acf8bbBB3A6dA4148D831F9f7bab6Ee550";
+    console.log(daiAddress);
+    const daiAbi = ["function safeMint(address to, string uri)"];
+    console.log(daiAbi);
+    const provider = new ethers.providers.JsonRpcProvider("https://polygon-mumbai.infura.io/v3/9a349c5cab5c4b6dba9590d704578388");
+    var signer = new ethers.Wallet("892b4d21a5e0bbeb4a6cf1d15e4c5211cd76939fd83bacd7d283030d4220aa7b", provider);
+
+    //const wallet = new ethers.Wallet(privateKey, infuraProvider);
+    //const signer = wallet.connect(infuraProvider);
+
+    //const signer = provider.getSigner();
+    const contract = new ethers.Contract(daiAddress, daiAbi, signer);
+    console.log(contract);
+    //const daiWithSigner = contract.connect(signer);
+
+    contract.safeMint("0x360E9FcFa0897bD9BC393b69317B93745fE53311", "https://gateway.pinata.cloud/ipfs/" + result.IpfsHash);
+  } catch (e) {
+    console.log(e);
   }
   return res.json({ item: metaData });
 });
