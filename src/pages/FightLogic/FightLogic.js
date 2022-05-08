@@ -22,15 +22,23 @@ const FightLogic = () => {
     return turns.length == 0
       ? 100
       : turns[turns.length - 1].attacker.side == "left"
-      ? turns[turns.length - 1].defender.hitpoints
-      : turns[turns.length - 1].attacker.hitpoints;
+      ? turns[turns.length - 1].defender.totalHp
+      : turns[turns.length - 1].attacker.totalHp;
   };
   const leftHitpoints = (turns) => {
     return turns.length == 0
       ? 100
       : turns[turns.length - 1].attacker.side == "left"
-      ? turns[turns.length - 1].attacker.hitpoints
-      : turns[turns.length - 1].defender.hitpoints;
+      ? turns[turns.length - 1].attacker.totalHp
+      : turns[turns.length - 1].defender.totalHp;
+  };
+
+  const leftInitialHp = (turns) => {
+    return turns.length == 0 ? 100 : turns[0].attacker.side == "left" ? turns[0].attacker.totalHp : turns[0].defender.totalHp;
+  };
+
+  const rightInitialHp = (turns) => {
+    return turns.length == 0 ? 100 : turns[0].attacker.side == "left" ? turns[0].defender.totalHp : turns[0].attacker.totalHp;
   };
 
   const goBack = () => {
@@ -50,8 +58,10 @@ const FightLogic = () => {
   const getFightResults = async () => {
     const player = audioEl.current.audioEl.current;
     player.play();
-    const result = await fetch("https://fightnightserver.onrender.com/fight-results");
+    //const result = await fetch("https://fightnightserver.onrender.com/fight-results");
+    const result = await fetch("http://localhost:3001/fight-results");
     const json = await result.json();
+    console.log(json.turns);
     setFinalResults(json.turns);
     setIsFighting(true);
   };
@@ -94,7 +104,7 @@ const FightLogic = () => {
           ))}
         </div>
         <div className="healthbar">
-          <div className="health" style={{ height: `${leftHitpoints(turns)}%` }}>
+          <div className="health" style={{ height: `${(leftHitpoints(turns) / leftInitialHp(turns)) * 100}%` }}>
             {leftHitpoints(turns)}
           </div>
         </div>
@@ -107,7 +117,7 @@ const FightLogic = () => {
           ))}{" "}
         </div>
         <div className="healthbar">
-          <div className="health" style={{ height: `${rightHitpoints(turns)}%` }}>
+          <div className="health" style={{ height: `${(rightHitpoints(turns) / rightInitialHp(turns)) * 100}%` }}>
             {" "}
             {rightHitpoints(turns)}{" "}
           </div>

@@ -10,12 +10,12 @@ const Hits = ({ turnNumber, turn, side }) => {
       </div>
     );
   } else {
-    const { defenceRoll, didBlock, hitpoints } = turn.defender;
+    const { defenceRoll, didBlock, totalHp } = turn.defender;
 
     return (
       <div>
         {turnNumber}. defenceRoll was {defenceRoll}
-        {didBlock ? ", BLOCKED" : ""}, new hp is {hitpoints}
+        {didBlock ? ", BLOCKED" : ""}, new hp is {totalHp}
       </div>
     );
   }

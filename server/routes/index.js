@@ -131,25 +131,41 @@ router.get("/fight-results", function (req, res, next) {
   const leftFighter = {
     side: "left",
     isAttacking: Math.random() < 0.5,
-    hitpoints: 100,
-    attack: 10,
+    hitpoints: 10,
+    wp: 10,
     defence: 10,
+    power: 10,
     armour: 15,
-    weaponBoost: 10,
-    attackPotion: 5,
-    shieldPotion: 7,
+    weaponPower: 10,
+    weaponDefence: 0,
+    weaponHitpoints: 5,
+    weaponZeal: 3,
+    weaponWp: 0,
+    armourZeal: 0,
+    armourDefence: 0,
+    armourHitpoints: 4,
+    armourWp: 0,
+    haste: 1,
     speed: 1.9,
   };
 
   const rightFighter = {
     side: "right",
-    hitpoints: 100,
-    attack: 10,
+    hitpoints: 15,
+    wp: 10,
     defence: 10,
+    power: 10,
     armour: 15,
-    weaponBoost: 10,
-    attackPotion: 5,
-    shieldPotion: 7,
+    haste: 0,
+    weaponPower: 10,
+    weaponDefence: 0,
+    weaponHitpoints: 1,
+    weaponZeal: 3,
+    weaponWp: 0,
+    armourZeal: 0,
+    armourDefence: 0,
+    armourHitpoints: 3,
+    armourWp: 0,
     speed: 1.3,
   };
 
@@ -168,8 +184,8 @@ router.get("/fight-results", function (req, res, next) {
   do {
     leftTurns = [];
     rightTurns = [];
-    rightFighter.hitpoints = rightHP;
-    leftFighter.hitpoints = leftHP;
+    //rightFighter.hitpoints = rightHP;
+    //leftFighter.hitpoints = leftHP;
     turns = doFight(leftTurns, rightTurns, leftFighter, rightFighter);
     console.log("fight");
   } while (turns === null);
@@ -178,25 +194,32 @@ router.get("/fight-results", function (req, res, next) {
 });
 
 function doFight(leftTurns, rightTurns, leftFighter, rightFighter) {
-  while (rightFighter.hitpoints > 0) {
+  leftFighter.totalSpeed = leftFighter.speed * (1 - leftFighter.haste / 100);
+  rightFighter.totalSpeed = rightFighter.speed * (1 - rightFighter.haste / 100);
+
+  leftFighter.totalHp = leftFighter.hitpoints + leftFighter.weaponHitpoints + leftFighter.armourHitpoints;
+  rightFighter.totalHp = rightFighter.hitpoints + rightFighter.weaponHitpoints + rightFighter.armourHitpoints;
+
+  while (rightFighter.totalHp > 0) {
     doTurnTimed(leftTurns, leftFighter, rightFighter, "left");
+    //console.log(rightFighter.totalHp);
   }
 
-  while (leftFighter.hitpoints > 0) {
+  while (leftFighter.totalHp > 0) {
     doTurnTimed(rightTurns, leftFighter, rightFighter, "right");
   }
 
   const leftTurnsGoingFirst = leftTurns.map((t, i) => {
     return {
       ...t,
-      time: i * leftFighter.speed,
+      time: i * leftFighter.totalSpeed,
     };
   });
 
   const rightTurnsGoingSecond = rightTurns.map((t, i) => {
     return {
       ...t,
-      time: i * rightFighter.speed + 0.65,
+      time: i * rightFighter.totalSpeed + 0.65,
     };
   });
 
@@ -207,14 +230,14 @@ function doFight(leftTurns, rightTurns, leftFighter, rightFighter) {
   const leftTurnsGoingSecond = leftTurns.map((t, i) => {
     return {
       ...t,
-      time: i * leftFighter.speed + 0.65,
+      time: i * leftFighter.totalSpeed + 0.65,
     };
   });
 
   const rightTurnsGoingFirst = rightTurns.map((t, i) => {
     return {
       ...t,
-      time: i * rightFighter.speed,
+      time: i * rightFighter.totalSpeed,
     };
   });
 
@@ -235,74 +258,52 @@ function doFight(leftTurns, rightTurns, leftFighter, rightFighter) {
 
 async function doTurnTimed(turns, leftFighter, rightFighter, attackerSide) {
   const currentAttacker = attackerSide === "left" ? leftFighter : rightFighter;
-  const { attack, weaponBoost, attackPotion } = currentAttacker;
+  const { wp, power, weaponPower, weaponZeal, weaponWp, armourZeal, armourWp } = currentAttacker;
   const currentDefender = currentAttacker === leftFighter ? rightFighter : leftFighter;
-  const { hitpoints, defence, armour, shieldPotion } = currentDefender;
-  const defenceEvent = armour + shieldPotion + defence;
+  const { totalHp, defence, armour, weaponDefence, armourDefence } = currentDefender;
+  const defenceEvent = 15 + (defence + armourDefence + weaponDefence) * 0.33;
   const defenceRoll = randomInt(99);
-  const didBlock = defenceRoll < Math.min(defenceEvent, 90);
-  const maxHit = attack + attackPotion + weaponBoost;
+  const didBlock = defenceRoll < defenceEvent;
+  const maxHit = (weaponPower + power) * 0.33 + 1;
   const baseHit = randomInt(maxHit);
-  const finalDamage = Math.floor(!didBlock ? baseHit : baseHit * (1 - defence / 100));
-  const newHp = Math.max(hitpoints - finalDamage, 0);
-
-  turns.push({
-    attacker: {
-      side: currentAttacker === leftFighter ? "left" : "right",
-      maxHit,
-      baseHit,
-      finalDamage,
-    },
-    defender: {
-      defence,
-      hitpoints: newHp,
-      defenceRoll,
-      didBlock,
-    },
-  });
-
-  if (currentDefender === leftFighter) {
-    leftFighter.hitpoints = newHp;
+  const zealEvent = 5 + (armourZeal + weaponZeal) * 0.25;
+  const zealRoll = randomInt(99);
+  const didZeal = zealRoll < zealEvent;
+  const hitChance = (wp + weaponWp + armourWp) * 0.33 + 33;
+  const didHitRoll = randomInt(99);
+  const didHit = didHitRoll < hitChance;
+  let newHp, finalDamage;
+  if (!didHit) {
+    newHp = totalHp;
+    finalDamage = 0;
   } else {
-    rightFighter.hitpoints = newHp;
+    const maxReduction = armour / 10 + (armourDefence + defence + weaponDefence) * 0.33;
+    const actualReduction = randomInt(maxReduction); // todo: use random from range
+    finalDamage = Math.floor(!didBlock ? baseHit : baseHit * (1 - actualReduction / 100));
+    //if (didZeal) finalDamage *= 2;
+    newHp = Math.max(totalHp - finalDamage, 0);
   }
-}
-
-async function doTurn(turns, leftFighter, rightFighter) {
-  const currentAttacker = leftFighter.isAttacking ? leftFighter : rightFighter;
-  const { attack, weaponBoost, attackPotion } = currentAttacker;
-  const currentDefender = currentAttacker === leftFighter ? rightFighter : leftFighter;
-  const { hitpoints, defence, armour, shieldPotion } = currentDefender;
-  const defenceEvent = armour + shieldPotion + defence;
-  const defenceRoll = randomInt(99);
-  const didBlock = defenceRoll < Math.min(defenceEvent, 90);
-  const maxHit = attack + attackPotion + weaponBoost;
-  const baseHit = randomInt(maxHit);
-  const finalDamage = Math.floor(!didBlock ? baseHit : baseHit * (1 - defence / 100));
-  const newHp = Math.max(hitpoints - finalDamage, 0);
-
   turns.push({
     attacker: {
       side: currentAttacker === leftFighter ? "left" : "right",
+      // we need some hp here
       maxHit,
       baseHit,
       finalDamage,
-      hitpoints: leftFighter === currentAttacker ? leftFighter.hitpoints : rightFighter.hitpoints,
+      didZeal,
     },
     defender: {
       defence,
-      hitpoints: newHp,
+      totalHp: newHp,
       defenceRoll,
       didBlock,
     },
   });
 
   if (currentDefender === leftFighter) {
-    leftFighter.hitpoints = newHp;
-    leftFighter.isAttacking = true;
+    leftFighter.totalHp = newHp;
   } else {
-    rightFighter.hitpoints = newHp;
-    leftFighter.isAttacking = false;
+    rightFighter.totalHp = newHp;
   }
 }
 

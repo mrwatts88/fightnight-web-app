@@ -3,13 +3,17 @@
 x[] Rework fight logic
 x[] Protected routes
 x[] Auto-connect wallet
+x[] comprehensive loot file
+x[] Check inventory
+x[] phil and matt fight and one of us get loot
 [] Integrate character stats into fights
 [] Staking contract
 [] Check character equipment
 [] Check health
-[] Check inventory
 [] Select opponent and fight
 [] Get herbs and heal
+[] change character to erc-721
+[] dynamic stat application when leveling upchar nft
 x[] create a city config
 x[] Make a click target config system
 x[] create a click target tool
@@ -24,16 +28,3 @@ x[] mobile view
 [x] put world map in game
 [x] make cities clickable
 [x] Move fight logic to server
-
-Notes
-win fight
-server
-x- does get loot?
-x- determine type of loot
-x- determine stats from eligible range
-
-- programatically upload metadata to ipfs
-  - create metadata points to existing image
-  - returns url
-- mint nft with url we just got
-  - safeMint

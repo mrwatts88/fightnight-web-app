@@ -1218,3 +1218,420 @@ lyari's light boots:
     armour: [20, 26]
     haste: [1]
     hitpoints: [6]
+
+    /////////////////heavy armour
+
+/// heavy helm
+
+damaged heavy helm:
+  1:
+    armour: [1, 4]
+    
+common heavy helm:
+  1:
+    armour: [4, 12]
+    
+steel heavy helm:
+  1:
+    armour: [12, 22]
+    zeal: [1]
+
+mountain forged heavy helm:
+  1:
+    armour: [12, 22]
+    defence: [1]
+
+imperial heavy helm:
+  1:
+    armour: [22, 32]
+    zeal: [3]
+
+quaking heavy helm:
+  1:
+    armour: [22, 32]
+    defence: [3]
+
+artisan heavy helm:
+  1:
+    armour: [32, 42]
+    zeal: [5]
+
+lava heavy helm:
+  1:
+    armour: [32, 42]
+    defence: [5]
+
+tavia's heavy helm:
+  1:
+    armour: [40, 52]
+    zeal: [6]
+
+thorgrin's heavy helm:
+  1:
+    armour: [40, 52]
+    defence: [6]
+
+/// heavy chest piece
+
+damaged heavy chest piece:
+  1:
+    armour: [1, 6]
+    
+common heavy chest piece:
+  1:
+    armour: [6, 36]
+    
+steel heavy chest piece:
+  1:
+    armour: [36, 66]
+    zeal: [1]
+
+mountain forged heavy chest piece:
+  1:
+    armour: [36, 66]
+    defence: [1]
+
+imperial heavy chest piece:
+  1:
+    armour: [66, 96]
+    zeal: [3]
+
+quaking heavy chest piece:
+  1:
+    armour: [66, 96]
+    defence: [3]
+
+artisan heavy chest piece:
+  1:
+    armour: [96, 126]
+    zeal: [5]
+
+lava heavy chest piece:
+  1:
+    armour: [96, 126]
+    defence: [5]
+
+tavia's heavy chest piece:
+  1:
+    armour: [124, 156]
+    zeal: [6]
+
+thorgrin's heavy chest piece:
+  1:
+    armour: [124, 156]
+    defence: [6]
+
+/// heavy shield
+
+damaged heavy shield:
+  1:
+    armour: [1, 6]
+    
+common heavy shield:
+  1:
+    armour: [6, 36]
+    
+steel heavy shield:
+  1:
+    armour: [36, 66]
+    zeal: [1]
+
+mountain forged heavy shield:
+  1:
+    armour: [36, 66]
+    defence: [1]
+
+imperial heavy shield:
+  1:
+    armour: [66, 96]
+    zeal: [3]
+
+quaking heavy shield:
+  1:
+    armour: [66, 96]
+    defence: [3]
+
+artisan heavy shield:
+  1:
+    armour: [96, 126]
+    zeal: [5]
+
+lava heavy shield:
+  1:
+    armour: [96, 126]
+    defence: [5]
+
+tavia's heavy shield:
+  1:
+    armour: [124, 156]
+    zeal: [6]
+
+thorgrin's heavy shield:
+  1:
+    armour: [124, 156]
+    defence: [6]
+
+/// heavy legs
+
+damaged heavy legs:
+  1:
+    armour: [1, 8]
+    
+common heavy legs:
+  1:
+    armour: [8, 24]
+    
+steel heavy legs:
+  1:
+    armour: [24, 44]
+    zeal: [1]
+
+mountain forged heavy legs:
+  1:
+    armour: [24, 44]
+    defence: [1]
+
+imperial heavy legs:
+  1:
+    armour: [44, 64]
+    zeal: [3]
+
+quaking heavy legs:
+  1:
+    armour: [44, 64]
+    defence: [3]
+
+artisan heavy legs:
+  1:
+    armour: [64, 84]
+    zeal: [5]
+
+lava heavy legs:
+  1:
+    armour: [64, 84]
+    defence: [5]
+
+tavia's heavy legs:
+  1:
+    armour: [82, 104]
+    zeal: [6]
+
+thorgrin's heavy legs:
+  1:
+    armour: [82, 104]
+    defence: [6]
+
+
+/// heavy boots
+
+damaged heavy boots:
+  1:
+    armour: [1, 4]
+    
+common heavy boots:
+  1:
+    armour: [4, 12]
+    
+steel heavy boots:
+  1:
+    armour: [12, 22]
+    zeal: [1]
+
+mountain forged heavy boots:
+  1:
+    armour: [12, 22]
+    defence: [1]
+
+imperial heavy boots:
+  1:
+    armour: [22, 32]
+    zeal: [3]
+
+quaking heavy boots:
+  1:
+    armour: [22, 32]
+    defence: [3]
+
+artisan heavy boots:
+  1:
+    armour: [32, 42]
+    zeal: [5]
+
+lava heavy boots:
+  1:
+    armour: [32, 42]
+    defence: [5]
+
+tavia's heavy boots:
+  1:
+    armour: [40, 52]
+    zeal: [6]
+
+thorgrin's heavy boots:
+  1:
+    armour: [40, 52]
+    defence: [6]    
+
+//////////////////////runed armour
+
+/// runed hood
+
+damaged runed hood:
+  1:
+    armour: [1, 2]
+    weapon proficiency: [1]
+
+common runed hood:
+  1:
+    armour: [2, 6]
+    weapon proficiency: [1]
+
+strange runed hood:
+  1:
+    armour: [6, 11]
+    weapon proficiency: [2]
+    
+static runed hood:
+  1:
+    armour: [11, 16]
+    weapon proficiency: [4]
+    
+lightning runed hood:
+  1:
+    armour: [16, 21]
+    weapon proficiency: [6]
+    
+arc's runed hood:
+  1:
+    armour: [20, 26]
+    weapon proficiency: [7]
+
+///runed top robe
+
+damaged runed top robe:
+  1:
+    armour: [1, 3]
+    weapon proficiency: [1]
+
+common runed top robe:
+  1:
+    armour: [3, 18]
+    weapon proficiency: [1]
+
+strange runed top robe:
+  1:
+    armour: [18, 33]
+    weapon proficiency: [2]
+    
+static runed top robe:
+  1:
+    armour: [33, 48]
+    weapon proficiency: [4]
+    
+lightning runed top robe:
+  1:
+    armour: [48, 63]
+    weapon proficiency: [6]
+    
+arc's runed top robe:
+  1:
+    armour: [62, 78]
+    weapon proficiency: [7]
+   
+
+/// deflector
+
+damaged deflector:
+  1:
+    armour: [1, 3]
+    weapon proficiency: [1]
+
+common deflector:
+  1:
+    armour: [3, 18]
+    weapon proficiency: [1]
+
+strange deflector:
+  1:
+    armour: [18, 33]
+    weapon proficiency: [2]
+    
+static deflector:
+  1:
+    armour: [33, 48]
+    weapon proficiency: [4]
+    
+lightning deflector:
+  1:
+    armour: [48, 63]
+    weapon proficiency: [6]
+
+arc's deflector:
+  1:
+    armour: [62, 78]
+    weapon proficiency: [7]
+
+
+/// bottom robe
+
+damaged bottom robe:
+  1:
+    armour: [1, 4]
+    weapon proficiency: [1]
+
+common bottom robe:
+  1:
+    armour: [4, 12]
+    weapon proficiency: [1]
+
+strange bottom robe:
+  1:
+    armour: [12, 22]
+    weapon proficiency: [2]
+  
+static bottom robe:
+  1:
+    armour: [22, 32]
+    weapon proficiency: [4]
+
+lightning bottom robe:
+  1:
+    armour: [32, 42]
+    weapon proficiency: [6]
+ 
+arc's bottom robe:
+  1:
+    armour: [41, 52]
+    weapon proficiency: [7]
+  
+/// runed boots
+
+damaged runed boots:
+  1:
+    armour: [1, 2]
+    weapon proficiency: [1]
+
+common runed boots:
+  1:
+    armour: [2, 6]
+    weapon proficiency: [1]
+
+strange runed boots:
+  1:
+    armour: [6, 11]
+    weapon proficiency: [2]
+
+static runed boots:
+  1:
+    armour: [11, 16]
+    weapon proficiency: [4]
+
+lightning runed boots:
+  1:
+    armour: [16, 21]
+    weapon proficiency: [6]
+
+arc's runed boots:
+  1:
+    armour: [20, 26]
+    weapon proficiency: [7]
